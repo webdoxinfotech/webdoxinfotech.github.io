@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+        }
+        
+        #myvid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        #myBtn {
+            width: 150px;
+            padding: 10px 30px;
+            background: dodgerblue;
+            color: white;
+            border: 1px solid rgb(5, 72, 140);
+
+
+        }
+
+        .content {
+            padding: 15px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            color: #bbbbbb;
+        }
+
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <video src="vidbg.mp4" autoplay muted loop id="myvid"></video>
+
+    <div class="content">
+        <h1>Some heading</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente id porro necessitatibus nulla? Sunt necessitatibus explicabo tempora ad ducimus voluptatibus provident adipisci natus at! Quisquam asperiores dicta illum corporis eaque.</p>
+
+        <button id="myBtn" onclick="togglePause()">Pause</button>
+    </div>
+    
+
+    <script>
+        let video = document.getElementById("myvid");
+
+        let myBtn = document.getElementById("myBtn");
+
+        function togglePause() {
+            if (video.paused) {
+                video.play()
+                myBtn.textContent = "Play"
+            }    
+            else {
+                video.pause()
+                myBtn.textContent = "Pause"
+            }
+        }
+
+
+    </script>
+</body>
+</html>
